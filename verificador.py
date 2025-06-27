@@ -1,10 +1,9 @@
 from PIL import Image
 import google.generativeai as genai
 
-# Configure sua chave da API do Gemini
 genai.configure(api_key="AIzaSyA2mL3Kh7zh51JyQ8Bn7uJAoTJgjUWLsWk")
 
-# Função para chamar a Gemini e obter comparação
+
 def comparar_com_gemini(caminho_bi, caminho_selfie):
     model = genai.GenerativeModel("gemini-1.5-flash")
     
@@ -17,7 +16,6 @@ def comparar_com_gemini(caminho_bi, caminho_selfie):
     
     return response.text.strip()
 
-# Função principal que orquestra tudo
 def verificar_identidade(caminho_bi, caminho_selfie, usar_gemini=False):
     try:
         similaridade = float(comparar_com_gemini(caminho_bi, caminho_selfie))
@@ -33,5 +31,4 @@ def verificar_identidade(caminho_bi, caminho_selfie, usar_gemini=False):
         "similaridade": similaridade,
         "status": status
     }
-
 
