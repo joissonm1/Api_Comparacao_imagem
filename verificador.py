@@ -1,7 +1,7 @@
 from PIL import Image
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyA2mL3Kh7zh51JyQ8Bn7uJAoTJgjUWLsWk")
+genai.configure(api_key="AIzaSyAPQyerLja6zrr7BreiC5Z9hSSUsLR6Ze4")
 
 
 def comparar_com_gemini(caminho_bi, caminho_selfie):
