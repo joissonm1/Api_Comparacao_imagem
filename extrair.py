@@ -31,7 +31,7 @@ def extrair_data_nascimento(caminho_verso_bi):
 def extrair_data_validade(caminho_verso_bi):
     with open(caminho_verso_bi, "rb") as f:
         response = model.generate_content([
-            "Extraia apenas a data de validade do bilhete. Responda somente com a data no formato dd/mm/aaaa.(inicio) - dd/mm/aaaaa (fim)",
+            "Extraia apenas a data de validade do bilhete. Responda somente com a data no formato dd/mm/aaaa.(inicio) - dd/mm/aaaaa (fim), para saberes a data de validade deves ver o seguinte: Emitido em: e Valido até:, no caso o emito em será o inicio e o válido até será o fim",
             {"mime_type": "image/jpeg", "data": f.read()}
         ])
     return response.text.strip()
