@@ -28,6 +28,14 @@ def extrair_data_nascimento(caminho_verso_bi):
         ])
     return response.text.strip()
 
+def extrair_data_validade(caminho_verso_bi):
+    with open(caminho_verso_bi, "rb") as f:
+        response = model.generate_content([
+            "Extraia apenas a data de validade do bilhete. Responda somente com a data no formato dd/mm/aaaa.(inicio) - dd/mm/aaaaa (fim)",
+            {"mime_type": "image/jpeg", "data": f.read()}
+        ])
+    return response.text.strip()
+    
 def identificar_lado_bi(imagem_bytes):
     prompt = (
         "Esta imagem é a frente ou o verso de um bilhete de identidade angolano? "

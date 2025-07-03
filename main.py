@@ -10,7 +10,8 @@ from extrair import (
     extrair_nome,
     extrair_bi,
     extrair_data_nascimento,
-    identificar_lado_bi
+    identificar_lado_bi,
+    extrair_data_validade
 )
 
 app = FastAPI()
@@ -75,12 +76,14 @@ async def verificar(
     nome = extrair_nome(caminho_frente)
     bi = extrair_bi(caminho_frente)
     data_nascimento = extrair_data_nascimento(caminho_verso)
+    data_validade = extrair_data_validade(caminho_verso)
     resultado_verificacao = verificar_identidade(caminho_frente, caminho_selfie)
 
     dados_extraidos = {
         "nome": nome,
         "numero_bi": bi,
         "data_nascimento": data_nascimento,
+        "data_validade": data_validade,
         "verificacao": resultado_verificacao
     }
 
