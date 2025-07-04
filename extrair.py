@@ -1,7 +1,7 @@
 # extrair.py
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyB_CvI0fHhBSvBv_Sb3K-uYGBTRseAtYvw") 
+genai.configure(api_key="AIzaSyBtLMyuQAKoVIe8ie8119KbNO4A4UgCh6E") 
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 def extrair_nome(caminho_frente_bi):
